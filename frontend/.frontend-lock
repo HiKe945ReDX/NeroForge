@@ -1,0 +1,4 @@
+FRONTEND_LOCKED=true
+TIMESTAMP=$(date)
+STATUS=WORKING
+MESSAGE="Frontend files are locked to prevent disappearing on reload"

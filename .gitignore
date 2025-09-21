@@ -1,0 +1,7 @@
+.env
+*.pyc
+__pycache__/
+*.log
+backend/keys/*.json
+node_modules/
+backend/keys/*.json
