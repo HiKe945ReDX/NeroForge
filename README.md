@@ -1,4 +1,4 @@
-# 💀🔥 GUIDORA - AI-POWERED CAREER GUIDANCE REVOLUTION
+# GUIDORA - AI-POWERED CAREER GUIDANCE REVOLUTION
 
 ![Guidora Logo](https://img.shields.io/badge/GUIDORA-AI%20Career%20Platform-purple?style=for-the-badge
 
