@@ -1,0 +1,310 @@
+
+services:
+  # REDIS SERVICE
+  redis:
+    image: redis:7.2-alpine
+    container_name: guidora_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # API GATEWAY - PORT 3000
+  api-gateway:
+    build:
+      context: ./backend/services/api-gateway
+      dockerfile: Dockerfile
+    container_name: guidora_api_gateway
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/services/api-gateway/logs:/usr/src/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # USER SERVICE - PORT 5001
+  user-service:
+    build:
+      context: ./backend/services/user-service
+      dockerfile: Dockerfile
+    container_name: guidora_user_service
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/configs/keys:/app/keys:ro
+      - ./backend/services/user-service/logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # AI GUIDANCE SERVICE - PORT 5002
+  ai-guidance:
+    build:
+      context: ./backend/services/ai-guidance
+      dockerfile: Dockerfile
+    container_name: guidora_ai_guidance
+    restart: unless-stopped
+    ports:
+      - "5002:5002"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/configs/keys:/app/keys:ro
+      - ./backend/services/ai-guidance/logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # CAREER ATLAS SERVICE - PORT 5003 (CORRECTED)
+  career-atlas:
+    build:
+      context: ./backend/services/career-atlas-service
+      dockerfile: Dockerfile
+    container_name: guidora_career_atlas
+    restart: unless-stopped
+    ports:
+      - "5003:5003"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/configs/keys:/app/keys:ro
+      - ./backend/services/career-atlas-service/logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # PORTFOLIO SERVICE - PORT 5004 (CORRECTED)
+  portfolio-service:
+    build:
+      context: ./backend/services/portfolio-service
+      dockerfile: Dockerfile
+    container_name: guidora_portfolio
+    restart: unless-stopped
+    ports:
+      - "5004:5004"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/configs/keys:/app/keys:ro
+      - ./backend/services/portfolio-service/logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5004/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # GAMIFICATION SERVICE - PORT 5005 (CORRECTED)
+  gamification:
+    build:
+      context: ./backend/services/gamification-service
+      dockerfile: Dockerfile
+    container_name: guidora_gamification
+    restart: unless-stopped
+    ports:
+      - "5005:5005"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/configs/keys:/app/keys:ro
+      - ./backend/services/gamification-service/logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5005/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # SIMULATION SERVICE - PORT 5006 (CORRECTED)
+  simulation-service:
+    build:
+      context: ./backend/services/simulation-service
+      dockerfile: Dockerfile
+    container_name: guidora_simulation
+    restart: unless-stopped
+    ports:
+      - "5006:5006"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/configs/keys:/app/keys:ro
+      - ./backend/services/simulation-service/logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5006/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # MOCK INTERVIEW SERVICE - PORT 5008
+  mock-interview:
+    build:
+      context: ./backend/services/mock-interview
+      dockerfile: Dockerfile
+    container_name: guidora_mock_interview
+    restart: unless-stopped
+    ports:
+      - "5008:5008"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/services/mock-interview/logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5008/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # NOTIFICATION SERVICE - PORT 5009
+  notification-service:
+    build:
+      context: ./backend/services/notification-service
+      dockerfile: Dockerfile
+    container_name: guidora_notifications
+    restart: unless-stopped
+    ports:
+      - "5009:5009"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/services/notification-service/logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5009/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # NEWS & FEEDS SERVICE - PORT 5010
+  news-feeds-service:
+    build:
+      context: ./backend/services/news-feeds-service
+      dockerfile: Dockerfile
+    container_name: guidora_news_feeds
+    restart: unless-stopped
+    ports:
+      - "5010:5010"
+    env_file:
+      - .env
+    volumes:
+      - ./backend/configs/keys:/app/keys:ro
+      - ./backend/services/news-feeds-service/logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - guidora_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5010/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  redis_data:
+
+networks:
+  guidora_network:
+    driver: bridge
+
+# CONTEXT SERVICE - PORT 5007
+context-service:
+  build:
+    context: ./backend/services/context-service
+    dockerfile: Dockerfile
+  container_name: guidora_context_service
+  restart: unless-stopped
+  ports:
+    - "5007:5007"
+  env_file:
+    - .env
+  volumes:
+    - ./backend/configs/keys:/app/keys:ro
+    - ./backend/services/context-service/logs:/app/logs
+  depends_on:
+    redis:
+      condition: service_healthy
+  networks:
+    - guidora_network
+  healthcheck:
+    test: ["CMD", "curl", "-f", "http://localhost:5007/health"]
+    interval: 30s
+    timeout: 10s
+    retries: 3
+    start_period: 30s

@@ -1,0 +1,476 @@
+=== GUIDORA REPOSITORY TREE ===
+Generated: Sun Nov  2 10:39:14 AM IST 2025
+
+[2.6M]  .
+├── [1.5M]  backend
+│   ├── [ 16K]  configs
+│   │   ├── [5.7K]  environments
+│   │   │   └── [1.7K]  .env.template
+│   │   └── [6.3K]  keys
+│   │       └── [2.3K]  guidora-main-64003334e37b.json
+│   ├── [ 572]  Dockerfile
+│   ├── [ 17K]  README.md
+│   └── [1.5M]  services
+│       ├── [316K]  ai-guidance
+│       │   ├── [ 202]  Dockerfile
+│       │   ├── [4.0K]  logs
+│       │   ├── [ 21K]  README.md
+│       │   ├── [ 624]  requirements.txt
+│       │   ├── [209K]  src
+│       │   │   ├── [ 31K]  api
+│       │   │   │   ├── [4.5K]  discovery.py
+│       │   │   │   ├── [8.7K]  endpoints
+│       │   │   │   │   └── [4.7K]  empathy.py
+│       │   │   │   ├── [2.0K]  endpoints.py
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   ├── [2.1K]  psychometric.py
+│       │   │   │   ├── [ 941]  routes.py
+│       │   │   │   ├── [4.2K]  skills_endpoints.py
+│       │   │   │   └── [4.9K]  work_style.py
+│       │   │   ├── [5.8K]  core
+│       │   │   │   ├── [1.4K]  authentication.py
+│       │   │   │   ├── [ 383]  config.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [ 24K]  data
+│       │   │   │   ├── [7.3K]  careers_db.py
+│       │   │   │   ├── [6.4K]  empathy_map_questions.json
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [6.7K]  skills_database.json
+│       │   │   ├── [ 25K]  db
+│       │   │   │   ├── [2.7K]  client.py
+│       │   │   │   ├── [ 18K]  crud.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [   0]  __init__.py
+│       │   │   ├── [1.2K]  main.py
+│       │   │   ├── [ 13K]  models
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [8.7K]  models.py
+│       │   │   ├── [100K]  services
+│       │   │   │   ├── [4.4K]  empathy_map.py
+│       │   │   │   ├── [ 27K]  github_service.py
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   ├── [ 29K]  linkedin_service.py
+│       │   │   │   ├── [1.6K]  persona_wizard.py
+│       │   │   │   ├── [1.6K]  resume_parser_gemini.py
+│       │   │   │   ├── [ 24K]  roadmap_builder.py
+│       │   │   │   └── [8.1K]  work_style_assessment.py
+│       │   │   └── [4.8K]  utils
+│       │   │       ├── [   0]  __init__.py
+│       │   │       └── [ 862]  logging.py
+│       │   ├── [1.6K]  test_production_recommendations.py
+│       │   ├── [ 71K]  test_resume.pdf
+│       │   └── [4.0K]  tests
+│       ├── [ 66K]  api-gateway
+│       │   ├── [2.0K]  config.js
+│       │   ├── [ 361]  Dockerfile
+│       │   ├── [2.8K]  health.js
+│       │   ├── [3.3K]  index.js
+│       │   ├── [4.0K]  logs
+│       │   ├── [ 378]  package.json
+│       │   ├── [ 39K]  package-lock.json
+│       │   ├── [ 10K]  README.md
+│       │   └── [   0]  User-Agent:
+│       ├── [209K]  career-atlas-service
+│       │   ├── [ 35K]  careers_database_expanded.json
+│       │   ├── [1.5K]  careers_database.json
+│       │   ├── [ 442]  Dockerfile
+│       │   ├── [   0]  .dockerignore
+│       │   ├── [ 13K]  expand_careers_prod.py
+│       │   ├── [2.1K]  import_careers_gcloud.py
+│       │   ├── [4.0K]  logs
+│       │   ├── [1.1K]  README.MD
+│       │   ├── [ 236]  requirements.txt
+│       │   ├── [131K]  src
+│       │   │   ├── [ 19K]  api
+│       │   │   │   ├── [2.3K]  career_routes.py
+│       │   │   │   ├── [6.3K]  endpoints.py
+│       │   │   │   ├── [5.2K]  endpoints.py.backup
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [1.3K]  routes.py
+│       │   │   ├── [ 15K]  core
+│       │   │   │   ├── [4.3K]  config.py
+│       │   │   │   ├── [4.3K]  config.py.backup
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [1.9K]  vector_db.py
+│       │   │   ├── [8.7K]  data
+│       │   │   │   ├── [4.7K]  careers_50_profiles.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [ 12K]  db
+│       │   │   │   ├── [6.0K]  client.py
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [2.2K]  knowledge_crud.py
+│       │   │   ├── [   0]  __init__.py
+│       │   │   ├── [1012]  main.py
+│       │   │   ├── [ 27K]  models
+│       │   │   │   ├── [6.1K]  career_models.py
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [ 17K]  knowledge_models.py
+│       │   │   ├── [ 36K]  services
+│       │   │   │   ├── [6.2K]  career_analyzer.py
+│       │   │   │   ├── [ 13K]  discovery_processor_v2.py
+│       │   │   │   ├── [1.2K]  embedding_service.py
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   ├── [6.1K]  knowledge_graph.py
+│       │   │   │   └── [6.2K]  skill_mapper.py
+│       │   │   └── [7.8K]  utils
+│       │   │       ├── [1.5K]  discoveryprocessor.py
+│       │   │       ├── [   0]  __init__.py
+│       │   │       └── [2.3K]  logging.py
+│       │   ├── [4.2K]  test_production_final.py
+│       │   └── [ 12K]  tests
+│       │       ├── [   0]  __init__.py
+│       │       ├── [4.0K]  integration
+│       │       │   └── [   0]  __init__.py
+│       │       └── [4.0K]  unit
+│       │           └── [   0]  __init__.py
+│       ├── [123K]  context-service
+│       │   ├── [ 685]  cleanup_mongodb.py
+│       │   ├── [ 58K]  context_logs.json
+│       │   ├── [ 597]  Dockerfile
+│       │   ├── [ 192]  requirements.txt
+│       │   └── [ 60K]  src
+│       │       ├── [9.7K]  api
+│       │       │   ├── [ 674]  endpoints.py
+│       │       │   ├── [  86]  __init__.py
+│       │       │   ├── [2.6K]  persona_endpoints.py
+│       │       │   └── [2.4K]  persona.py
+│       │       ├── [4.8K]  core
+│       │       │   ├── [ 347]  config.py
+│       │       │   ├── [ 436]  database.py
+│       │       │   └── [  85]  __init__.py
+│       │       ├── [6.4K]  db
+│       │       │   ├── [1.9K]  client.py
+│       │       │   ├── [ 554]  indices.py
+│       │       │   └── [  19]  __init__.py
+│       │       ├── [  18]  __init__.py
+│       │       ├── [1.3K]  main.py
+│       │       ├── [4.9K]  models
+│       │       │   ├── [ 925]  context.py
+│       │       │   └── [   0]  __init__.py
+│       │       ├── [ 24K]  services
+│       │       │   ├── [  83]  __init__.py
+│       │       │   └── [ 20K]  persona_aggregator.py
+│       │       └── [4.7K]  utils
+│       │           ├── [ 742]  auth.py
+│       │           └── [   0]  __init__.py
+│       ├── [303K]  gamification-service
+│       │   ├── [ 623]  Dockerfile
+│       │   ├── [ 668]  .dockerignore
+│       │   ├── [4.0K]  logs
+│       │   ├── [   0]  README.md
+│       │   ├── [ 338]  requirements.txt
+│       │   ├── [281K]  src
+│       │   │   ├── [ 63K]  api
+│       │   │   │   ├── [ 21K]  achievements.py
+│       │   │   │   ├── [ 11K]  challenges.py
+│       │   │   │   ├── [6.7K]  endpoints.py
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [ 21K]  leaderboards.py
+│       │   │   ├── [ 35K]  core
+│       │   │   │   ├── [ 17K]  achievement_engine.py
+│       │   │   │   ├── [3.9K]  config.py
+│       │   │   │   ├── [3.9K]  config.py.backup
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [6.7K]  points_engine.py
+│       │   │   ├── [ 19K]  db
+│       │   │   │   ├── [2.8K]  client.py
+│       │   │   │   ├── [ 13K]  gamification_crud.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [   0]  __init__.py
+│       │   │   ├── [ 681]  main.py
+│       │   │   ├── [ 18K]  models
+│       │   │   │   ├── [8.1K]  challenge_models.py
+│       │   │   │   ├── [6.3K]  gamification_models.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [114K]  services
+│       │   │   │   ├── [ 25K]  achievement_service.py
+│       │   │   │   ├── [ 31K]  challenge_manager.py
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   ├── [ 19K]  leaderboard_service.py
+│       │   │   │   ├── [ 11K]  points_calculator.py
+│       │   │   │   └── [ 24K]  progress_tracker.py
+│       │   │   └── [ 27K]  utils
+│       │   │       ├── [ 14K]  cache_manager.py
+│       │   │       ├── [   0]  __init__.py
+│       │   │       └── [9.6K]  notification_client.py
+│       │   └── [ 12K]  tests
+│       │       ├── [   0]  __init__.py
+│       │       ├── [4.0K]  integration
+│       │       │   └── [   0]  __init__.py
+│       │       └── [4.0K]  unit
+│       │           └── [   0]  __init__.py
+│       ├── [ 52K]  mock-interview
+│       │   ├── [ 623]  Dockerfile
+│       │   ├── [4.0K]  logs
+│       │   ├── [  25]  README.md
+│       │   ├── [ 164]  requirements.txt
+│       │   └── [ 44K]  src
+│       │       ├── [6.5K]  api
+│       │       │   ├── [  64]  __init__.py
+│       │       │   └── [2.5K]  interview_api.py
+│       │       ├── [4.4K]  core
+│       │       │   ├── [ 335]  config.py
+│       │       │   └── [  65]  __init__.py
+│       │       ├── [  60]  __init__.py
+│       │       ├── [9.4K]  main.py
+│       │       ├── [6.9K]  models
+│       │       │   ├── [  67]  __init__.py
+│       │       │   └── [2.8K]  interview_models.py
+│       │       ├── [8.4K]  services
+│       │       │   ├── [  69]  __init__.py
+│       │       │   └── [4.3K]  voice_processor.py
+│       │       └── [4.1K]  utils
+│       │           └── [  66]  __init__.py
+│       ├── [ 37K]  news-feeds-service
+│       │   ├── [ 623]  Dockerfile
+│       │   ├── [4.0K]  logs
+│       │   ├── [ 172]  requirements.txt
+│       │   └── [ 28K]  src
+│       │       ├── [5.3K]  api
+│       │       │   ├── [1.2K]  feeds_api.py
+│       │       │   └── [  68]  __init__.py
+│       │       ├── [4.6K]  core
+│       │       │   └── [ 589]  config.py
+│       │       ├── [  64]  __init__.py
+│       │       ├── [2.3K]  main.py
+│       │       ├── [5.2K]  models
+│       │       │   ├── [1.1K]  feed_models.py
+│       │       │   └── [  71]  __init__.py
+│       │       └── [7.0K]  services
+│       │           ├── [1.8K]  gemini_content_service.py
+│       │           ├── [  73]  __init__.py
+│       │           └── [1.1K]  news_aggregator.py
+│       ├── [ 39K]  notification-service
+│       │   ├── [ 623]  Dockerfile
+│       │   ├── [4.0K]  logs
+│       │   ├── [  73]  requirements.txt
+│       │   └── [ 31K]  src
+│       │       ├── [4.7K]  core
+│       │       │   └── [ 751]  config.py
+│       │       ├── [  66]  __init__.py
+│       │       ├── [ 689]  main.py
+│       │       ├── [9.1K]  models
+│       │       │   ├── [  73]  __init__.py
+│       │       │   ├── [2.9K]  notification_api.py
+│       │       │   └── [2.1K]  notification_models.py
+│       │       └── [ 12K]  services
+│       │           ├── [8.0K]  email_service.py
+│       │           └── [  75]  __init__.py
+│       ├── [ 97K]  portfolio-service
+│       │   ├── [ 623]  Dockerfile
+│       │   ├── [4.0K]  logs
+│       │   ├── [ 326]  requirements.txt
+│       │   ├── [ 179]  requiremnts.txt
+│       │   ├── [ 64K]  src
+│       │   │   ├── [8.2K]  api
+│       │   │   │   ├── [4.2K]  endpoints.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [7.7K]  content
+│       │   │   │   ├── [3.7K]  content_generator.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [8.4K]  core
+│       │   │   │   ├── [ 277]  config.py
+│       │   │   │   ├── [4.1K]  config.py.backup
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [5.0K]  db
+│       │   │   │   ├── [1005]  client.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [4.0K]  exports
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [   0]  __init__.py
+│       │   │   ├── [7.4K]  integrations
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [3.4K]  service_client.py
+│       │   │   ├── [ 663]  main.py
+│       │   │   ├── [2.2K]  models.py
+│       │   │   ├── [ 12K]  templates
+│       │   │   │   ├── [8.0K]  generator.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   └── [4.6K]  utils
+│       │   │       ├── [   0]  __init__.py
+│       │   │       └── [ 616]  logging.py
+│       │   ├── [ 12K]  static
+│       │   │   ├── [4.0K]  assets
+│       │   │   └── [4.0K]  templates
+│       │   └── [ 12K]  tests
+│       │       ├── [4.0K]  integration
+│       │       └── [4.0K]  unit
+│       ├── [ 66K]  simulation-service
+│       │   ├── [ 623]  Dockerfile
+│       │   ├── [4.0K]  logs
+│       │   ├── [ 175]  requirements.txt
+│       │   ├── [ 45K]  src
+│       │   │   ├── [5.7K]  api
+│       │   │   │   ├── [1.7K]  endpoints.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [9.2K]  core
+│       │   │   │   ├── [ 405]  config.py
+│       │   │   │   ├── [4.8K]  config.py.backup
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   ├── [6.9K]  db
+│       │   │   │   ├── [ 800]  client.py
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [2.1K]  simulation_crud.py
+│       │   │   ├── [   0]  __init__.py
+│       │   │   ├── [ 676]  main.py
+│       │   │   ├── [5.3K]  models
+│       │   │   │   ├── [   0]  __init__.py
+│       │   │   │   └── [1.3K]  simulation_models.py
+│       │   │   ├── [9.1K]  services
+│       │   │   │   ├── [5.1K]  career_path_simulator.py
+│       │   │   │   └── [   0]  __init__.py
+│       │   │   └── [4.4K]  utils
+│       │   │       ├── [   0]  __init__.py
+│       │   │       └── [ 428]  logging.py
+│       │   └── [ 12K]  tests
+│       │       ├── [   0]  __init__.py
+│       │       ├── [4.0K]  integration
+│       │       │   └── [   0]  __init__.py
+│       │       └── [4.0K]  unit
+│       │           └── [   0]  __init__.py
+│       └── [197K]  user-service
+│           ├── [ 664]  Dockerfile
+│           ├── [4.0K]  logs
+│           ├── [1.1K]  onboarding.py
+│           ├── [ 471]  requirements.txt
+│           ├── [183K]  src
+│           │   ├── [ 49K]  api
+│           │   │   ├── [1.9K]  activity.py
+│           │   │   ├── [ 15K]  auth.py
+│           │   │   ├── [7.8K]  empathy
+│           │   │   │   └── [3.8K]  __init__.py
+│           │   │   ├── [8.2K]  onboarding.py
+│           │   │   ├── [1.4K]  preferences_routes.py
+│           │   │   ├── [6.5K]  profile_completion.py
+│           │   │   ├── [1.2K]  skills.py
+│           │   │   └── [3.6K]  users.py
+│           │   ├── [ 23K]  core
+│           │   │   ├── [1.3K]  config.py
+│           │   │   ├── [1.2K]  database.py
+│           │   │   ├── [9.1K]  email_service.py
+│           │   │   ├── [   0]  __init__.py
+│           │   │   ├── [2.4K]  redis_client.py
+│           │   │   ├── [2.8K]  security.py
+│           │   │   └── [2.8K]  token_service.py
+│           │   ├── [ 14K]  data
+│           │   │   ├── [   0]  __init__.py
+│           │   │   └── [9.5K]  skills_catalog.py
+│           │   ├── [7.8K]  db
+│           │   │   ├── [3.2K]  indices.py
+│           │   │   └── [ 659]  __init__.py
+│           │   ├── [  73]  __init__.py
+│           │   ├── [7.9K]  jobs
+│           │   │   ├── [  59]  __init__.py
+│           │   │   └── [3.8K]  scheduler.py
+│           │   ├── [2.9K]  main.py
+│           │   ├── [ 31K]  middleware
+│           │   │   ├── [4.4K]  activity_tracker.py
+│           │   │   ├── [2.0K]  circuit_breaker.py
+│           │   │   ├── [2.1K]  correlation_middleware.py
+│           │   │   ├── [2.5K]  csrf_protection.py
+│           │   │   ├── [2.6K]  exception_handler.py
+│           │   │   ├── [2.2K]  file_validator.py
+│           │   │   ├── [  65]  __init__.py
+│           │   │   ├── [3.1K]  input_sanitizer.py
+│           │   │   ├── [2.7K]  nosql_injection_guard.py
+│           │   │   ├── [1.8K]  rate_limiter.py
+│           │   │   ├── [1.5K]  request_limiter.py
+│           │   │   └── [1.5K]  security_headers.py
+│           │   ├── [ 21K]  models
+│           │   │   ├── [ 11K]  activity.py
+│           │   │   ├── [ 604]  errors.py
+│           │   │   ├── [   0]  __init__.py
+│           │   │   ├── [1.4K]  onboarding.py
+│           │   │   ├── [1.8K]  user.py
+│           │   │   └── [2.3K]  validation.py
+│           │   ├── [ 14K]  services
+│           │   │   ├── [9.5K]  analytics.py
+│           │   │   └── [  67]  __init__.py
+│           │   └── [9.2K]  utils
+│           │       ├── [   0]  __init__.py
+│           │       ├── [ 689]  logging.py
+│           │       ├── [2.2K]  security_audit.py
+│           │       └── [2.3K]  structured_logger.py
+│           └── [4.0K]  tests
+│               └── [   0]  test_auth.py
+├── [1.9K]  deploy_all.sh
+├── [7.4K]  docker-compose-ultimate.yml
+├── [1.8K]  .env
+├── [951K]  frontend
+│   ├── [ 321]  Dockerfile
+│   ├── [  71]  .env
+│   ├── [ 194]  .env.production
+│   ├── [1.7K]  nginx.conf
+│   ├── [ 875]  package.json
+│   ├── [647K]  package-lock.json
+│   ├── [  82]  postcss.config.js
+│   ├── [ 16K]  public
+│   │   ├── [ 12K]  assets
+│   │   │   ├── [4.0K]  icons
+│   │   │   └── [4.0K]  images
+│   │   └── [ 467]  index.html
+│   ├── [280K]  src
+│   │   ├── [ 969]  App.css
+│   │   ├── [2.9K]  App.js
+│   │   ├── [2.3K]  App.jsx
+│   │   ├── [ 45K]  components
+│   │   │   ├── [ 30K]  Career
+│   │   │   │   ├── [4.9K]  CareerProgressionTimeline.jsx
+│   │   │   │   ├── [4.9K]  EducationSection.jsx
+│   │   │   │   ├── [5.6K]  FitScoreCard.jsx
+│   │   │   │   ├── [4.3K]  ProConsSection.jsx
+│   │   │   │   └── [6.2K]  RelatedCareersCarousel.jsx
+│   │   │   ├── [ 209]  Dashboard.jsx
+│   │   │   ├── [4.1K]  Layout.js
+│   │   │   ├── [3.2K]  Login.jsx
+│   │   │   └── [3.9K]  Signup.jsx
+│   │   ├── [4.6K]  config
+│   │   │   └── [ 654]  api.js
+│   │   ├── [ 793]  config.js
+│   │   ├── [4.9K]  context
+│   │   │   └── [ 879]  AuthContext.js
+│   │   ├── [ 523]  index.html
+│   │   ├── [ 252]  index.js
+│   │   ├── [196K]  pages
+│   │   │   ├── [ 23K]  AIGuidance.js
+│   │   │   ├── [ 111]  _app.js
+│   │   │   ├── [6.5K]  Career
+│   │   │   │   └── [2.5K]  CareerDetail.jsx
+│   │   │   ├── [5.0K]  CareerAtlas.js
+│   │   │   ├── [7.8K]  Dashboard.js
+│   │   │   ├── [ 19K]  Gamification.js
+│   │   │   ├── [ 15K]  InterviewPrep.js
+│   │   │   ├── [ 77K]  Onboarding
+│   │   │   │   ├── [5.4K]  BasicInfoForm.jsx
+│   │   │   │   ├── [9.5K]  CareerDiscovery.jsx
+│   │   │   │   ├── [7.9K]  CareerPreferences.jsx
+│   │   │   │   ├── [7.4K]  CareerQuiz.jsx
+│   │   │   │   ├── [8.8K]  CareerSelection.jsx
+│   │   │   │   ├── [2.6K]  CompletionScreen.jsx
+│   │   │   │   ├── [6.9K]  EmpathyTest.jsx
+│   │   │   │   ├── [ 10K]  Intros
+│   │   │   │   │   ├── [3.4K]  EmpathyIntro.jsx
+│   │   │   │   │   └── [2.6K]  PsychometricIntro.jsx
+│   │   │   │   ├── [3.5K]  OnboardingFlow.jsx
+│   │   │   │   ├── [1.5K]  ProgressBar.jsx
+│   │   │   │   ├── [2.3K]  PsychometricTest.jsx
+│   │   │   │   ├── [4.3K]  ResumeUpload.jsx
+│   │   │   │   └── [2.9K]  SkillsPicker.jsx
+│   │   │   ├── [6.0K]  Portfolio.js
+│   │   │   ├── [ 21K]  Profile
+│   │   │   │   └── [ 17K]  UserProfile.jsx
+│   │   │   └── [ 11K]  Profile.js
+│   │   └── [ 18K]  services
+│   │       ├── [6.3K]  api.js
+│   │       ├── [1.2K]  auth.js
+│   │       └── [6.4K]  utils
+│   │           └── [2.4K]  api.js
+│   └── [ 522]  tailwind.config.js
+├── [7.8K]  gcp_complete_export.sh
+├── [ 143]  .gitignore
+├── [6.8K]  guidoracb.sh
+├── [  76]  guidora_repo_tree_20251102_103914.txt
+├── [4.0K]  test_results
+└── [ 71K]  test_resume.pdf
+
+ 2.6M used in 135 directories, 336 files

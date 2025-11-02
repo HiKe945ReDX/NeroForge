@@ -1,0 +1,29 @@
+# SECRETS - NEVER COMMIT
+backend/configs/keys/
+*.json
+.env
+.env.local
+.env.production
+secrets/
+config/keys/
+
+# Build/Runtime
+venv/
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Logs
+logs/
+*.log
+guidora_*.txt
